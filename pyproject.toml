@@ -1,0 +1,18 @@
+[project]
+name = "bline_integration"
+authors = [
+    { name = "Bizcentric", email = "t.jouma@bizcentric.me" }
+]
+description = "Two-way integration between Bline (voice-agent platform) and ERPNext/Frappe."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "requests"
+]
+
+[build-system]
+requires = ["flit_core>=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]

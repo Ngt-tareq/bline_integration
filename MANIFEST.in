@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include bline_integration *.css
+recursive-include bline_integration *.csv
+recursive-include bline_integration *.html
+recursive-include bline_integration *.ico
+recursive-include bline_integration *.js
+recursive-include bline_integration *.json
+recursive-include bline_integration *.md
+recursive-include bline_integration *.png
+recursive-include bline_integration *.py
+recursive-include bline_integration *.svg
+recursive-include bline_integration *.txt
+recursive-exclude bline_integration *.pyc

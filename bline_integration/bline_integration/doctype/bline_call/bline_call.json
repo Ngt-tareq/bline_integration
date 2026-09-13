@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "autoname": "field:bline_call_id",
+ "creation": "2026-09-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bline_call_id",
+  "agent",
+  "contact",
+  "lead",
+  "column_break_1",
+  "direction",
+  "status",
+  "started_at",
+  "duration_seconds",
+  "transfer_target",
+  "end_reason",
+  "section_break_1",
+  "language_summary",
+  "raw_payload"
+ ],
+ "fields": [
+  {
+   "fieldname": "bline_call_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bline Call ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Bline Agent"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Direction"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Started At"
+  },
+  {
+   "fieldname": "duration_seconds",
+   "fieldtype": "Float",
+   "label": "Duration (seconds)"
+  },
+  {
+   "fieldname": "transfer_target",
+   "fieldtype": "Data",
+   "label": "Transfer Target"
+  },
+  {
+   "fieldname": "end_reason",
+   "fieldtype": "Data",
+   "label": "End Reason"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Raw Data"
+  },
+  {
+   "fieldname": "language_summary",
+   "fieldtype": "Code",
+   "label": "Language Summary (JSON)",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "raw_payload",
+   "fieldtype": "Code",
+   "label": "Raw Payload (JSON)",
+   "options": "JSON"
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bline Integration",
+ "name": "Bline Call",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "bline_call_id",
+ "track_changes": 1
+}

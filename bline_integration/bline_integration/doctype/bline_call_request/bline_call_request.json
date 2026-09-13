@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "autoname": "BLINE-CREQ-.#####",
+ "creation": "2026-09-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "to_number",
+  "contact",
+  "lead",
+  "column_break_1",
+  "connection",
+  "agent",
+  "section_break_1",
+  "status",
+  "bline_call_id",
+  "error",
+  "column_break_2",
+  "placed_by",
+  "placed_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "to_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Bline connection id to use instead of the Default Connection in Bline Settings. Leave blank to use the default.",
+   "fieldname": "connection",
+   "fieldtype": "Data",
+   "label": "Connection (override)"
+  },
+  {
+   "description": "Bline agent id to use instead of the Default Agent in Bline Settings. Leave blank to use the default.",
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "Agent (override)"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Result"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nPlaced\nFailed"
+  },
+  {
+   "fieldname": "bline_call_id",
+   "fieldtype": "Data",
+   "label": "Bline Call ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "placed_by",
+   "fieldtype": "Link",
+   "label": "Placed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "placed_at",
+   "fieldtype": "Datetime",
+   "label": "Placed At",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bline Integration",
+ "name": "Bline Call Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "to_number",
+ "track_changes": 1
+}

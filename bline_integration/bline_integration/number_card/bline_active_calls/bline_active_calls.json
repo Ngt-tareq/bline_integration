@@ -1,0 +1,18 @@
+{
+ "color": "#2ecc71",
+ "creation": "2026-09-13 00:00:00.000000",
+ "doctype": "Number Card",
+ "document_type": "Bline Dashboard Snapshot",
+ "filters_json": "[]",
+ "is_public": 1,
+ "label": "Bline Active Calls",
+ "method": "bline_integration.number_cards.active_calls",
+ "modified": "2026-09-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bline Integration",
+ "name": "Bline Active Calls",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Daily",
+ "type": "Custom"
+}

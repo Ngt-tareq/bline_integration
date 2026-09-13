@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-09-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "captured_at",
+  "calls_today",
+  "calls_total",
+  "active_calls",
+  "column_break_1",
+  "average_duration_seconds",
+  "transfer_rate",
+  "p95_turn_latency_ms",
+  "column_break_2",
+  "agents",
+  "campaigns_running",
+  "dnc_entries",
+  "raw_payload"
+ ],
+ "fields": [
+  {
+   "fieldname": "captured_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Captured At",
+   "reqd": 1
+  },
+  {
+   "fieldname": "calls_today",
+   "fieldtype": "Int",
+   "label": "Calls Today"
+  },
+  {
+   "fieldname": "calls_total",
+   "fieldtype": "Int",
+   "label": "Calls Total"
+  },
+  {
+   "fieldname": "active_calls",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Active Calls"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "average_duration_seconds",
+   "fieldtype": "Float",
+   "label": "Average Duration (seconds)"
+  },
+  {
+   "fieldname": "transfer_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Transfer Rate"
+  },
+  {
+   "fieldname": "p95_turn_latency_ms",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "P95 Turn Latency (ms)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agents",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Agents"
+  },
+  {
+   "fieldname": "campaigns_running",
+   "fieldtype": "Int",
+   "label": "Campaigns Running"
+  },
+  {
+   "fieldname": "dnc_entries",
+   "fieldtype": "Int",
+   "label": "DNC Entries"
+  },
+  {
+   "fieldname": "raw_payload",
+   "fieldtype": "Code",
+   "label": "Raw Payload (JSON)",
+   "options": "JSON"
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bline Integration",
+ "name": "Bline Dashboard Snapshot",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "captured_at",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "captured_at",
+ "track_changes": 0
+}
