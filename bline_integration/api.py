@@ -196,3 +196,58 @@ def call_from_doctype(doctype, name, to_number):
     result = request_doc.place()
     result["name"] = request_doc.name
     return result
+
+
+@frappe.whitelist()
+def get_customer_phone(customer):
+    """Best-effort phone number for a Customer, for the Bline Call Request picker to prefill —
+    never raises, since a miss here just leaves To Number for the operator to fill in by hand."""
+    contact_name = frappe.db.get_value("Customer", customer, "customer_primary_contact")
+    if not contact_name:
+        link = frappe.get_all(
+            "Dynamic Link",
+            filters={"link_doctype": "Customer", "link_name": customer, "parenttype": "Contact"},
+            fields=["parent"],
+            limit=1,
+        )
+        contact_name = link[0].parent if link else None
+    if not contact_name:
+        return None
+    rows = frappe.get_all(
+        "Contact Phone",
+        filters={"parent": contact_name},
+        fields=["phone", "is_primary_mobile_no", "is_primary_phone"],
+    )
+    primary_mobile = next((r.phone for r in rows if r.is_primary_mobile_no), None)
+    primary_phone = next((r.phone for r in rows if r.is_primary_phone), None)
+    return primary_mobile or primary_phone or (rows[0].phone if rows else None)
+
+
+@frappe.whitelist()
+def build_invoice_context(sales_invoice):
+    """The facts the agent needs to talk intelligently about one invoice — company name
+    resolved from the invoice's own company (never hardcoded, so this works on any site this
+    app is installed on), the amounts, the dates, and the line items."""
+    if not frappe.db.exists("Sales Invoice", sales_invoice):
+        frappe.throw(_("No such Sales Invoice: {0}").format(sales_invoice))
+    doc = frappe.get_doc("Sales Invoice", sales_invoice)
+    company_name = frappe.get_cached_value("Company", doc.company, "company_name") or doc.company
+    line_items = [
+        {
+            "description": item.item_name or item.description or "-",
+            "quantity": item.qty,
+            "unit_price": item.rate,
+            "total": item.amount,
+        }
+        for item in (doc.items or [])
+    ]
+    return {
+        "company_name": company_name,
+        "invoice_number": doc.name,
+        "currency": doc.currency,
+        "total_amount": doc.grand_total,
+        "outstanding_amount": doc.outstanding_amount,
+        "issue_date": str(doc.posting_date) if doc.posting_date else None,
+        "due_date": str(doc.due_date) if doc.due_date else None,
+        "line_items": line_items,
+    }

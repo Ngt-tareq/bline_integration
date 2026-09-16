@@ -72,7 +72,14 @@ the app in directly, which also works.)
   and four live number cards (active calls, agents, transfer rate, p95
   latency) reflecting the most recent dashboard snapshot.
 - **Bline Call Request**: create one, optionally link a Contact/Lead and
-  override the connection/agent, then click **Call Now**.
+  override the connection/agent, then click **Call Now**. To call about a
+  specific invoice: pick a **Customer** (auto-fills **To Number** from their
+  primary contact), pick one of their **Sales Invoice**s, click **Load
+  Invoice Details** to preview exactly what will be sent (company, invoice
+  number, amounts, due date, line items) in **Context**, edit it if needed,
+  then **Call Now**. The agent gets these as background facts — it still
+  opens with its own greeting, but can answer "which invoice / how much / by
+  when" correctly instead of saying it has no access.
 - **Contact** / **Lead**: open any record and use the **Bline** button group
   in the top toolbar -> **Call via Bline**. It prompts for/confirms the
   number, places the call, and shows Bline's own response (call id and state,

@@ -1,3 +1,5 @@
+import json
+
 import frappe
 from frappe.model.document import Document
 
@@ -11,6 +13,13 @@ class BlineCallRequest(Document):
 
 	@frappe.whitelist()
 	def place(self):
+		context = None
+		if self.context:
+			try:
+				context = json.loads(self.context)
+			except ValueError:
+				frappe.throw(frappe._("Context is not valid JSON — fix it before calling."))
+
 		settings = frappe.get_single("Bline Settings")
 		try:
 			result = settings.place_call(
@@ -19,6 +28,7 @@ class BlineCallRequest(Document):
 				lead=self.lead,
 				connection=self.connection,
 				agent=self.agent,
+				context=context,
 			)
 		except (bline_client.BlineAPIError, frappe.ValidationError) as exc:
 			self.status = "Failed"

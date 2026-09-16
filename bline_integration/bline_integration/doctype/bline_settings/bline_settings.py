@@ -68,7 +68,16 @@ class BlineSettings(Document):
 		return len(items)
 
 	@frappe.whitelist()
-	def place_call(self, to_number, contact=None, lead=None, connection=None, agent=None, from_number=None):
+	def place_call(
+		self,
+		to_number,
+		contact=None,
+		lead=None,
+		connection=None,
+		agent=None,
+		from_number=None,
+		context=None,
+	):
 		connection_id = _parse_option(connection) or _parse_option(self.default_connection)
 		agent_id = _parse_option(agent) or _parse_option(self.default_agent)
 		if not connection_id:
@@ -85,6 +94,8 @@ class BlineSettings(Document):
 		resolved_from = from_number or self.default_from_number
 		if resolved_from:
 			body["from_number"] = resolved_from
+		if context:
+			body["context"] = context
 
 		result = bline_client.post(self, "/calls/outbound", json_body=body)
 

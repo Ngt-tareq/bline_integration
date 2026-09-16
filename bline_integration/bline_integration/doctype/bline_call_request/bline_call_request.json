@@ -5,12 +5,18 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "customer",
+  "sales_invoice",
+  "load_invoice_details",
+  "section_break_call",
   "to_number",
   "contact",
   "lead",
   "column_break_1",
   "connection",
   "agent",
+  "section_break_context",
+  "context",
   "section_break_1",
   "status",
   "bline_call_id",
@@ -20,6 +26,30 @@
   "placed_at"
  ],
  "fields": [
+  {
+   "description": "Pick a customer to call them about one of their invoices. Optional — leave blank and fill To Number directly for any other call.",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "description": "Filtered to the selected customer's invoices. Picking one loads its number, amount and due date into Context below.",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "load_invoice_details",
+   "fieldtype": "Button",
+   "label": "Load Invoice Details"
+  },
+  {
+   "fieldname": "section_break_call",
+   "fieldtype": "Section Break",
+   "label": "Call"
+  },
   {
    "fieldname": "to_number",
    "fieldtype": "Data",
@@ -54,6 +84,18 @@
    "fieldname": "agent",
    "fieldtype": "Data",
    "label": "Agent (override)"
+  },
+  {
+   "fieldname": "section_break_context",
+   "fieldtype": "Section Break",
+   "label": "Context sent to the agent"
+  },
+  {
+   "description": "What the agent will be told about this call before it starts (invoice number, amount, due date, ...). Auto-filled by Load Invoice Details; edit freely before calling.",
+   "fieldname": "context",
+   "fieldtype": "Code",
+   "label": "Context (JSON)",
+   "options": "JSON"
   },
   {
    "fieldname": "section_break_1",
