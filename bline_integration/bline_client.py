@@ -6,6 +6,8 @@ or a stored error message (Bline Call Request), so all failures here are
 raised as plain BlineAPIError with a human-readable message.
 """
 
+import datetime
+
 import frappe
 import requests
 
@@ -14,6 +16,26 @@ TIMEOUT = 20
 
 class BlineAPIError(Exception):
     pass
+
+
+def parse_datetime(value):
+    """Convert a Bline API timestamp (ISO 8601, e.g. '2026-09-14T12:05:52.299127Z')
+    into a naive datetime in the system timezone, since MySQL rejects the raw
+    'T'/'Z' ISO format Frappe's Datetime fields expect otherwise."""
+    if not value:
+        return None
+    if isinstance(value, datetime.datetime):
+        dt = value
+    else:
+        try:
+            dt = frappe.utils.get_datetime(value)
+        except Exception:
+            return None
+    if dt is None:
+        return None
+    if dt.tzinfo is not None:
+        dt = frappe.utils.convert_utc_to_system_timezone(dt).replace(tzinfo=None)
+    return dt
 
 
 def _base_url(settings):

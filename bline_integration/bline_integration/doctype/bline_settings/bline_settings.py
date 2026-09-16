@@ -127,7 +127,7 @@ def _upsert_agent(item):
 	doc.agent_name = item.get("name")
 	doc.status = item.get("status")
 	doc.language = item.get("language_mode")
-	doc.updated_at = item.get("updated_at")
+	doc.updated_at = bline_client.parse_datetime(item.get("updated_at"))
 	doc.save(ignore_permissions=True)
 
 
@@ -145,7 +145,7 @@ def _upsert_call_from_rest(item):
 		doc.agent = item["agent_id"]
 	doc.direction = item.get("direction")
 	doc.status = item.get("status")
-	doc.started_at = item.get("started_at")
+	doc.started_at = bline_client.parse_datetime(item.get("started_at"))
 	doc.duration_seconds = item.get("duration_seconds")
 	doc.transfer_target = item.get("transfer_target")
 	doc.end_reason = item.get("end_reason")

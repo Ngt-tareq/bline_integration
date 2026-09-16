@@ -6,6 +6,8 @@ import time
 import frappe
 from frappe import _
 
+from bline_integration import bline_client
+
 
 def verify_signature(secret: str, body: bytes, header: str, tolerance_seconds: int = 300) -> bool:
     if not header:
@@ -108,7 +110,7 @@ def _upsert_call_from_event(event_type, data, created_at):
         if data.get("direction"):
             doc.direction = data["direction"]
         if not doc.started_at:
-            doc.started_at = created_at or frappe.utils.now_datetime()
+            doc.started_at = bline_client.parse_datetime(created_at) or frappe.utils.now_datetime()
     elif event_type == "call.completed":
         doc.status = "completed"
         if "end_reason" in data:

@@ -5,20 +5,20 @@
    "label": "Bline Calls Per Day"
   }
  ],
- "content": "[{\"id\":\"header-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Bline</b></span>\",\"col\":12}},{\"id\":\"shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Settings\",\"col\":3}},{\"id\":\"shortcut-2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Agent\",\"col\":3}},{\"id\":\"shortcut-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Call\",\"col\":3}},{\"id\":\"shortcut-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Call Request\",\"col\":3}},{\"id\":\"shortcut-5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Dashboard Snapshot\",\"col\":3}},{\"id\":\"spacer-1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"header-2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"card-1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Active Calls\",\"col\":3}},{\"id\":\"card-2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Agents\",\"col\":3}},{\"id\":\"card-3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Transfer Rate\",\"col\":3}},{\"id\":\"card-4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline P95 Latency\",\"col\":3}},{\"id\":\"chart-1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Bline Calls Per Day\",\"col\":12}}]",
- "creation": "2026-09-13 00:00:00.000000",
+ "content": "[{\"id\":\"header-1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Bline</b></span>\",\"col\":12}},{\"id\":\"shortcut-1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Settings\",\"col\":3}},{\"id\":\"shortcut-2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Agent\",\"col\":3}},{\"id\":\"shortcut-3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Call\",\"col\":3}},{\"id\":\"shortcut-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Call Request\",\"col\":3}},{\"id\":\"shortcut-5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bline Dashboard Snapshot\",\"col\":3}},{\"id\":\"spacer-1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"header-2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"card-1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Active Calls\",\"col\":3}},{\"id\":\"card-2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Agents\",\"col\":3}},{\"id\":\"card-3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bline Transfer Rate\",\"col\":3}},{\"id\":\"chart-1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Bline Calls Per Day\",\"col\":12}}]",
+ "creation": "2026-09-13 00:00:00",
  "custom_blocks": [],
- "doctype": "Workspace",
  "docstatus": 0,
+ "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "phone",
+ "icon": "support",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
  "label": "Bline",
  "links": [],
- "modified": "2026-09-13 00:00:00.000000",
+ "modified": "2026-09-14 01:50:09.635044",
  "modified_by": "Administrator",
  "module": "Bline Integration",
  "name": "Bline",
@@ -34,10 +34,6 @@
   {
    "label": "Bline Transfer Rate",
    "number_card_name": "Bline Transfer Rate"
-  },
-  {
-   "label": "Bline P95 Turn Latency (ms)",
-   "number_card_name": "Bline P95 Latency"
   }
  ],
  "owner": "Administrator",
@@ -52,7 +48,6 @@
    "doc_view": "",
    "label": "Bline Settings",
    "link_to": "Bline Settings",
-   "stats_filter": "{}",
    "type": "DocType"
   },
   {
@@ -88,6 +83,5 @@
    "type": "DocType"
   }
  ],
- "title": "Bline",
- "type": "Workspace"
+ "title": "Bline"
 }
